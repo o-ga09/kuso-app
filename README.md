@@ -36,11 +36,11 @@ firebase login:ci
 1. firebase コンソールにアクセス
 2. 左上の「プロジェクトの設定」をクリック
 
-![プロジェクト設定](image.png)
+<img src="image.png" width="400px" height="200px">
 
-3. プロジェクト ID を選択
+1. プロジェクト ID を選択
 
-![プロジェクトID](image-1.png)
+<img src="image-1.png" width="400px" height="200px">
 
 以下の 2 つを GitHub Actions Secrets に登録
 
