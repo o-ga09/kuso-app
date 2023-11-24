@@ -3,8 +3,8 @@ import "./globals.css";
 import Provider from "./common/provider";
 
 const inter = Inter({ subsets: ["latin"] });
-const siteName = "おーがのブログ";
-const description = "しがないエンジニア　おーがのサイトです";
+const siteName = "モンハン登場回数ランキング";
+const description = "モンハンのモンスターで登場回数を表すランキングです！";
 const url = "https://t09-blog.com/";
 
 export const metadata = {
