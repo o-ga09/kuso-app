@@ -40,3 +40,5 @@ dist
 public/*.json
 public/*.png
 *.log
+functions/node_modules
+functions/lib
