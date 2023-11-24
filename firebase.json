@@ -3,5 +3,15 @@
     "predeploy": "npm run build",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  },
+  "functions": {
+    "source": ".",
+    "predeploy": ["npm install", "npm run build"],
+    "runtime": "nodejs10"
+  },
+  "frameworksBackend": {
+    "region": "asia-east1",
+    "maxInstances": 1,
+    "minInstances": 0
   }
 }
