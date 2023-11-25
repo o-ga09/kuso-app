@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Flex,
@@ -6,14 +7,14 @@ import {
   Heading,
   Link,
   Text,
+  useDisclosure,
 } from "./common/components";
+import { SearchButton } from "./components/Button";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import SearchModal from "./components/SearchModal";
 import { Monster, Title, monsters, titles } from "./lib/const";
 import Image from "next/image";
-
-interface Pos {
-  x: number;
-  y: number;
-}
 
 export default function Home() {
   // リストラ経験者
@@ -51,7 +52,7 @@ export default function Home() {
   // MH3以降のモンスター
   const NewMonsters3 = monsters.filter((monster) => {
     return titles.some(
-      (title) =>
+      () =>
         monster["MHW" as keyof Monster] === 2 ||
         monster["MHWI" as keyof Monster] === 2 ||
         monster["MHR" as keyof Monster] === 2 ||
@@ -95,26 +96,17 @@ export default function Home() {
     return NotzeroValueKeyCount >= 12;
   });
 
+  const { isOpen, onClose, onOpen } = useDisclosure();
+  const handleModalButton = () => {
+    onOpen();
+  };
   return (
     <Box bg={"gray.200"}>
-      {/* ヘッダー */}
-      <Box display={"flex"} flexDirection={"row"} p={4}>
-        <Image
-          src={"/logo-mh20th.png"}
-          alt="ロゴ画像"
-          height={96}
-          width={100}
-        />
-        <Heading
-          as={"h1"}
-          textAlign={"center"}
-          w={"100%"}
-          h={"10vh"}
-          fontSize={{ base: "20px", md: "30px" }}
-          justifyContent={"center"}
-        >
-          モンハン登場回数ランキング
-        </Heading>
+      <SearchModal isOpen={isOpen} onClose={onClose} />
+      <Header />
+
+      <Box display="flex" justifyContent="center">
+        <SearchButton onClick={handleModalButton} />
       </Box>
 
       {/* コンテンツ */}
@@ -315,17 +307,7 @@ export default function Home() {
         marginY={"5rem"}
       ></Box>
 
-      {/* フッター */}
-      <Flex
-        flexDirection={{ base: "column", xl: "row" }}
-        alignItems={"center"}
-        justifyContent={"center"}
-        h={{ base: "20vh", xl: "20vh" }}
-      >
-        <Flex flexDirection={"row"}></Flex>
-
-        <Text marginLeft={"30px"}>&copy; copyright 2023 o-ga09</Text>
-      </Flex>
+      <Footer />
     </Box>
   );
 }

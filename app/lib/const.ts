@@ -1,5 +1,32 @@
 import fs from "fs";
 
+export type Tag = {
+  id:number;
+  key:string;
+  isSelected:boolean;
+}
+
+export const TitleTag:Tag[] = [
+  {id:1, key:"MH",isSelected:false},
+  {id:2, key:"MHG",isSelected:false},
+  {id:3, key:"MH2",isSelected:false},
+  {id:4, key:"MH2G",isSelected:false},
+  {id:5, key:"P2",isSelected:false},
+  {id:6, key:"P2G",isSelected:false},
+  {id:7, key:"MH3",isSelected:false},
+  {id:8, key:"P3rd",isSelected:false},
+  {id:9, key:"MH3G",isSelected:false},
+  {id:10, key:"MH4",isSelected:false},
+  {id:11, key:"MH4G",isSelected:false},
+  {id:12, key:"MHX",isSelected:false},
+  {id:13, key:"MHXX",isSelected:false},
+  {id:14, key:"MHW",isSelected:false},
+  {id:15, key:"MHWI",isSelected:false},
+  {id:16, key:"MHR",isSelected:false},
+  {id:17, key:"MHRS",isSelected:false}
+]
+
+
 export interface Title {
     key: string;
     ja: string;
