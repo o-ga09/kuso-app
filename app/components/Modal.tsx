@@ -5,7 +5,6 @@ import {
   Button,
   Grid,
   GridItem,
-  ListItem,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -13,7 +12,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  UnorderedList,
 } from "../common/components";
 import { Tag, TitleTag } from "../lib/const";
 import { DecideButton } from "./Button";
