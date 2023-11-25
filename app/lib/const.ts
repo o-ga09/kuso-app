@@ -10,8 +10,8 @@ export const TitleTag:Tag[] = [
   {id:1, key:"MH",isSelected:false},
   {id:2, key:"MHG",isSelected:false},
   {id:3, key:"MH2",isSelected:false},
-  {id:4, key:"MH2G",isSelected:false},
-  {id:5, key:"P2",isSelected:false},
+  {id:4, key:"MHP",isSelected:false},
+  {id:5, key:"P2nd",isSelected:false},
   {id:6, key:"P2G",isSelected:false},
   {id:7, key:"MH3",isSelected:false},
   {id:8, key:"P3rd",isSelected:false},
@@ -33,7 +33,7 @@ export interface Title {
 }
 
 export interface Monster {
-    index: string;
+    index: number;
     name: { ja: string; en: string };
     tribe: { ja: string; en: string };
     MH: number,
@@ -81,11 +81,11 @@ export const titles:Title[] = [
   ];
 
 
-export const monsters = [
+export const monsters:Monster[] = [
     {
       index: 1,
-      name: { ja: "リオレイア", "en": "Rathian" },
-      tribe: { ja: "飛竜種", "en": "Flying Wyvern" },
+      name: { ja: "リオレイア", en: "Rathian" },
+      tribe: { ja: "飛竜種", en: "Flying Wyvern" },
       MH: 2,
       MHG: 1,
       MHP: 1,
